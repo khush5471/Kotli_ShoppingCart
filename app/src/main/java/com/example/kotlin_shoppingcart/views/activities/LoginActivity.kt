@@ -1,12 +1,13 @@
-package com.example.kotlin_shoppingcart
+package com.example.kotlin_shoppingcart.views.activities
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.example.kotlin_shoppingcart.R
 
-class MainActivity : AppCompatActivity() {
+class LoginActivity :BaseActivity(){
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        //FIRST PUSH TEST
     }
 }
