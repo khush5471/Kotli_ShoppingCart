@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:clickable="true"
+    android:focusable="true">
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent=".45" />
+
+    <ImageView
+        android:id="@+id/imgGirl"
+        android:layout_width="0dp"
+        android:layout_height="230dp"
+        android:layout_marginTop="20dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/ic_family_shop"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/view"
+        app:layout_constraintStart_toEndOf="@id/guideline"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Already\nHave an Account?"
+        android:textColor="@color/black"
+        android:textSize="25dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@id/imgGirl"
+        app:layout_constraintEnd_toStartOf="@id/guideline"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/imgGirl" />
+
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/edtUserName"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/imgGirl">
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:hint="Email"
+            android:textColorHint="@color/black"
+            android:textStyle="bold"
+            android:imeOptions="actionNext"
+            android:inputType="textEmailAddress"
+            android:maxLines="1" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/edtPassword"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        app:layout_constraintEnd_toEndOf="@id/edtUserName"
+        app:layout_constraintStart_toStartOf="@id/edtUserName"
+        app:layout_constraintTop_toBottomOf="@id/edtUserName">
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:hint="Password"
+            android:textColorHint="@color/black"
+            android:textStyle="bold"
+            android:imeOptions="actionDone"
+            android:inputType="textPassword"
+            android:maxLines="1" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <Button
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="50dp"
+        android:background="@drawable/bg_rippple"
+        android:text="Sign in"
+        android:id="@+id/buttonLogin"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/edtPassword" />
+
+    <TextView
+        android:id="@+id/txtNewUser"
+        android:layout_width="0dp"
+        app:layout_constraintTop_toBottomOf="@id/buttonLogin"
+        app:layout_constraintStart_toStartOf="@id/buttonLogin"
+        app:layout_constraintEnd_toEndOf="@id/buttonLogin"
+        android:text="New User? Register Now."
+        android:textStyle="bold"
+        android:textColor="@color/blue"
+        android:gravity="center"
+        android:layout_marginTop="20dp"
+        android:layout_height="wrap_content"
+        />
+
+    <TextView
+        app:layout_constraintTop_toBottomOf="@id/txtNewUser"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="20dp"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:text="Use Other Methods"
+        android:id="@+id/txtOtherOptions"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <View
+        android:layout_width="80dp"
+        android:layout_height="1dp"
+        android:layout_marginEnd="10dp"
+        android:background="@color/black"
+        app:layout_constraintTop_toTopOf="@id/txtOtherOptions"
+        app:layout_constraintBottom_toBottomOf="@id/txtOtherOptions"
+        app:layout_constraintEnd_toStartOf="@id/txtOtherOptions"/>
+
+    <View
+        android:layout_width="80dp"
+        android:layout_height="1dp"
+        android:layout_marginStart="10dp"
+        android:background="@color/black"
+        app:layout_constraintTop_toTopOf="@id/txtOtherOptions"
+        app:layout_constraintBottom_toBottomOf="@id/txtOtherOptions"
+        app:layout_constraintStart_toEndOf="@id/txtOtherOptions"/>
+
+
+    <View
+        android:id="@+id/view"
+        android:layout_width="15dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/bg_view"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+    <androidx.constraintlayout.widget.Guideline
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:id="@+id/guideline_ffity"
+        app:layout_constraintGuide_percent=".5"/>
+
+    <ImageView
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:src="@drawable/ic_fb"
+        app:layout_constraintEnd_toStartOf="@id/guideline_ffity"
+        app:layout_constraintTop_toBottomOf="@id/txtOtherOptions"/>
+
+    <ImageView
+        android:layout_width="50dp"
+        android:layout_marginTop="10dp"
+
+        android:layout_height="50dp"
+        android:layout_marginStart="10dp"
+        android:src="@drawable/ic_google"
+        app:layout_constraintStart_toEndOf="@id/guideline_ffity"
+        app:layout_constraintTop_toBottomOf="@id/txtOtherOptions"/>
+
+    <ImageButton
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:src="@drawable/ic_add_1"
+        android:background="@drawable/bg_signup"
+        android:layout_marginBottom="30dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/view" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
