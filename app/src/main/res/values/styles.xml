@@ -6,10 +6,11 @@
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
     </style>
-    <style name="coustomTheme" parent="Theme.AppCompat.Light.NoActionBar">
+    <style name="coustomTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
+
     </style>
 
 
@@ -22,5 +23,18 @@
         <item name="colorAccent">@color/colorAccent</item>
         <item name="colorControlNormal">@color/black</item>
         <item name="colorControlActivated">@color/blue</item>
+    </style>
+
+
+    <style name="MyHintStyle" parent="@android:style/TextAppearance">
+        <item name="android:textColor">@color/red</item>
+    </style>
+
+    <style name="TextAppearances" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <item name="android:textColorHint">@color/red</item>
+<!--        <item name="android:textSize">@dimen/text_20sp</item>-->
+        <item name="colorControlNormal">@color/red</item>
+        <item name="colorControlActivated">@color/red</item>
+        <item name="boxStrokeColor">@color/red</item>
     </style>
 </resources>
