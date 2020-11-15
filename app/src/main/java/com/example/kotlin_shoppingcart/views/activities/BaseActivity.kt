@@ -24,4 +24,16 @@ open class BaseActivity : AppCompatActivity() {
         }
         transaction?.add(R.id.container, fragment, tag)?.commitAllowingStateLoss()
     }
+
+    fun replaceFragment(fragment: Fragment,addToBackStack:Boolean){
+
+        val tag: String = fragment::class.java.simpleName
+        val supportFragmentManager = supportFragmentManager
+        val transaction: FragmentTransaction? = supportFragmentManager.beginTransaction()
+        if (addToBackStack) {
+            //   transaction?.setCustomAnimations(R.anim.anim_in, R.anim.anim_out, R.anim.anim_in_reverse, R.anim.anim_out_reverse)
+            transaction?.addToBackStack(tag)
+        }
+        transaction?.replace(R.id.container, fragment, tag)?.commitAllowingStateLoss()
+    }
 }

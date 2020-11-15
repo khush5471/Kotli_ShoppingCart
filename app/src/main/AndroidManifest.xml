@@ -16,7 +16,12 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".views.activities.LoginActivity" android:theme="@style/coustomTheme"/>
+        <activity android:name=".views.activities.LoginActivity"
+            android:windowSoftInputMode="adjustResize"
+            android:theme="@style/coustomTheme"/>
+        <activity android:name=".views.activities.HolderActivity"
+            android:theme="@style/coustomTheme"
+            />
     </application>
 
 </manifest>

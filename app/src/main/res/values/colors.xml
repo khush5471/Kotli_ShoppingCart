@@ -5,6 +5,9 @@
     <color name="colorAccent">#0884E6</color>
     <color name="white">#FFFFFF</color>
     <color name="blue">#0884E6</color>
+    <color name="light_white">#E9EAEC</color>
+    <color name="light_white_2">#EFEFEF</color>
+    <color name="dark_grey">#86878A</color>
     <color name="black">#000000</color>
     <color name="transparent">#00FFFFFF</color>
     <color name="red">#FF0000</color>
