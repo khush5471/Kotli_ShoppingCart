@@ -6,13 +6,12 @@
     android:layout_margin="10dp"
     card_view:cardCornerRadius="10dp"
     card_view:cardElevation="20dp"
-    card_view:contentPadding="0dp"
-    >
+    card_view:contentPadding="0dp">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:paddingBottom="10dp"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:paddingBottom="10dp">
 
         <ImageView
             android:id="@+id/imgProduct"
@@ -27,6 +26,7 @@
             card_view:layout_constraintTop_toTopOf="parent" />
 
         <TextView
+            android:id="@+id/txt_price"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:alpha=".7"
@@ -39,49 +39,54 @@
             card_view:layout_constraintTop_toTopOf="parent" />
 
         <TextView
+            android:id="@+id/txtProductName"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:fontFamily="sans-serif-condensed"
             android:gravity="center"
             android:text="hello"
             android:textColor="@color/black"
             android:textStyle="bold"
-            android:layout_marginTop="10dp"
-            android:id="@+id/txtProductName"
-            android:fontFamily="sans-serif-condensed"
             card_view:layout_constraintEnd_toEndOf="@id/imgProduct"
             card_view:layout_constraintStart_toStartOf="@id/imgProduct"
             card_view:layout_constraintTop_toBottomOf="@id/imgProduct" />
+
         <TextView
+            android:id="@+id/txtHelloWorld"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="sans-serif"
-            card_view:layout_constraintTop_toBottomOf="@id/txtProductName"
-            card_view:layout_constraintStart_toStartOf="@id/txtProductName"
-            card_view:layout_constraintEnd_toEndOf="@id/txtProductName"
             android:text="hello world"
-            android:id="@+id/txtHelloWorld"
-            android:textColor="@color/dark_grey"/>
+            android:maxLines="2"
+            android:ellipsize="end"
+            android:textColor="@color/dark_grey"
+            card_view:layout_constraintEnd_toEndOf="@id/txtProductName"
+            card_view:layout_constraintStart_toStartOf="@id/txtProductName"
+            card_view:layout_constraintTop_toBottomOf="@id/txtProductName" />
+
         <ImageView
-            card_view:layout_constraintTop_toBottomOf="@id/txtHelloWorld"
-            card_view:layout_constraintStart_toStartOf="parent"
+            android:id="@+id/img_add_favorities"
             android:layout_width="30dp"
             android:layout_height="30dp"
-            android:src="@drawable/ic_heart"
-            card_view:tint="@color/red"
+            android:layout_marginStart="10dp"
             android:layout_marginTop="10dp"
-            android:id="@+id/img_add_favorities"
-            android:layout_marginStart="10dp"/>
+            android:src="@drawable/ic_heart"
+            card_view:layout_constraintStart_toStartOf="parent"
+            card_view:layout_constraintTop_toBottomOf="@id/txtHelloWorld"
+            card_view:tint="@color/red" />
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            card_view:layout_constraintEnd_toEndOf="parent"
-            card_view:layout_constraintTop_toTopOf="@id/img_add_favorities"
-            card_view:layout_constraintBottom_toBottomOf="@id/img_add_favorities"
             android:layout_marginEnd="10dp"
+            android:text="4.5"
             android:textColor="@color/black"
             android:textSize="15dp"
             android:textStyle="bold"
-            android:text="4.5"/>
+            card_view:layout_constraintBottom_toBottomOf="@id/img_add_favorities"
+            card_view:layout_constraintEnd_toEndOf="parent"
+            card_view:layout_constraintTop_toTopOf="@id/img_add_favorities" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <RelativeLayout
