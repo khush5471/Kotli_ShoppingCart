@@ -17,7 +17,7 @@ import com.example.kotlin_shoppingcart.views.models.shopmodel.BrandName
 import com.example.kotlin_shoppingcart.views.models.shopmodel.BrandProductItems
 import kotlinx.android.synthetic.main.fragment_shop.*
 
-class ShopFragment : BaseFragment() ,SelectBrand{
+class ShopFragment : BaseFragment(), SelectBrand {
 
     var mAdapterBrands: BrandAdapter? = null
     var mLayoutManager: LinearLayoutManager? = null
@@ -26,17 +26,17 @@ class ShopFragment : BaseFragment() ,SelectBrand{
     var mGridLayoutManager: GridLayoutManager? = null
 
 
-    var mViewModel:ShopViewModel?=null
-    var mBrandList=ArrayList<BrandName>()
-    var mBrandProductList=ArrayList<BrandProductItems>()
-    var mSelectedBrandName=""
-
+    var mViewModel: ShopViewModel? = null
+    var mBrandList = ArrayList<BrandName>()
+    var mBrandProductList = ArrayList<BrandProductItems>()
+    var mSelectedBrandName = ""
+    
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.fragment_shop,container,false)
+        return inflater.inflate(R.layout.fragment_shop, container, false)
     }
 
 
@@ -44,14 +44,12 @@ class ShopFragment : BaseFragment() ,SelectBrand{
         super.onViewCreated(view, savedInstanceState)
         context?.let {
 
-            mAdapterBrands = BrandAdapter(it,mBrandList,this)
-            mLayoutManager = LinearLayoutManager(it,LinearLayoutManager.HORIZONTAL,false)
+            mAdapterBrands = BrandAdapter(it, mBrandList, this)
+            mLayoutManager = LinearLayoutManager(it, LinearLayoutManager.HORIZONTAL, false)
             recyclerBrands.layoutManager = mLayoutManager
             recyclerBrands.adapter = mAdapterBrands
-
-
-            mAdapterProducts= ProductsAdapter(it,mBrandProductList)
-            mGridLayoutManager= GridLayoutManager(it,2,GridLayoutManager.VERTICAL,false)
+            mAdapterProducts = ProductsAdapter(it, mBrandProductList)
+            mGridLayoutManager = GridLayoutManager(it, 2, GridLayoutManager.VERTICAL, false)
             recyclerBrandProducts.layoutManager = mGridLayoutManager
             recyclerBrandProducts.adapter = mAdapterProducts
 
@@ -62,29 +60,27 @@ class ShopFragment : BaseFragment() ,SelectBrand{
 
     }
 
-    fun init(){
-
-        mViewModel=ViewModelProvider(this).get(ShopViewModel::class.java)
+    /*Initialize the views.*/
+    fun init() {
+        mViewModel = ViewModelProvider(this).get(ShopViewModel::class.java)
         mViewModel?.getBrandList()
     }
 
 
-    fun attachObserver(){
+    /*Attaching observer to observe data*/
+    fun attachObserver() {
         mViewModel?.mBrandList?.observe(this, Observer {
             it?.let {
-               mBrandList.addAll(it)
-                mBrandList.get(0).isSelected=true
-                Log.e("size ","is "+it.size)
-
+                mBrandList.addAll(it)
+                mBrandList.get(0).isSelected = true
+                Log.e("size ", "is " + it.size)
                 mAdapterBrands?.notifyDataSetChanged()
-
                 mViewModel?.getBrandProducts(mBrandList.get(0).brandName)
             }
         })
 
         mViewModel?.mBrandProductList?.observe(this, Observer {
             it?.let {
-
                 mBrandProductList.clear()
                 mBrandProductList.addAll(it)
                 mAdapterProducts?.notifyDataSetChanged()
