@@ -1,17 +1,20 @@
 package com.example.kotlin_shoppingcart.views.fragments
 
 import android.app.Activity
+import android.app.Dialog
 import android.content.Intent
+import android.graphics.Color
+import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
-import android.provider.SyncStateContract
 import android.util.Log
+import android.view.Window
 import androidx.fragment.app.Fragment
 import com.example.kotlin_shoppingcart.R
 import com.example.kotlin_shoppingcart.views.activities.BaseActivity
 import com.example.kotlin_shoppingcart.views.utils.Constants
-import com.example.kotlin_shoppingcart.views.utils.Constants.INTENT_EXTRAS
 
 open class BaseFragment : Fragment(){
+    private var mDialoge: Dialog? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -72,5 +75,21 @@ open class BaseFragment : Fragment(){
                 )
             }
         }
+    }
+
+    //shows the dialoge
+    open fun showDialoge() {
+        mDialoge = Dialog(context!!)
+        mDialoge?.window?.requestFeature(Window.FEATURE_NO_TITLE)
+        mDialoge?.window
+            ?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
+        //                mProgressDialog?.window?.clearFlags(WindowManager.LayoutParams.FLAG_DIM_BEHIND)
+        mDialoge?.setContentView(R.layout.dialog_progress)
+        mDialoge?.setCancelable(false)
+        mDialoge?.show()
+    }
+    //shows the dialoge
+    open fun hideDialoge() {
+        mDialoge?.hide()
     }
 }

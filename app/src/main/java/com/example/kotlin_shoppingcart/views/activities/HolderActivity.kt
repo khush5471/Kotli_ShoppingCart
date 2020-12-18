@@ -7,6 +7,8 @@ import com.example.kotlin_shoppingcart.R
 import com.example.kotlin_shoppingcart.views.fragments.cart.CartFragment
 import com.example.kotlin_shoppingcart.views.fragments.shop.ShopFragment
 import com.example.kotlin_shoppingcart.views.fragments.wishlist.WishListFragment
+import com.example.kotlin_shoppingcart.views.utils.Constants
+import com.example.kotlin_shoppingcart.views.utils.Utils
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.navigation.NavigationView
 import kotlinx.android.synthetic.main.activity_dashboard.*
